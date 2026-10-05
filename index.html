@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Rfmems.github.io</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      font-size: 24px;
+    }
+    section {
+      margin: 40px;
+    }
+    #time {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Rfmems.github.io
+  </header>
+
+  <section>
+    <h2>Hi 👋</h2>
+    <p>I'm TC. Nice to meet you.</p>
+    <div id="time"></div>
+  </section>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const options = { 
+        year: 'numeric', month: 'long', day: 'numeric', 
+        hour: '2-digit', minute: '2-digit', second: '2-digit' 
+      };
+      document.getElementById('time').textContent = 
+        "현재 시각: " + now.toLocaleDateString('ko-KR', options);
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+</html>
